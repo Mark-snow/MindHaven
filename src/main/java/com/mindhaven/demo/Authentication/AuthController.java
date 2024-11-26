@@ -88,6 +88,7 @@ public class AuthController {
             res.put("status", 200);
             res.put("token", token);
             res.put("user id", userId);
+            res.put("user email", loginRequest.getEmail());
  
             return ResponseEntity.status(HttpStatus.OK.value()).body(res);
         }
