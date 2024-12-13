@@ -37,10 +37,11 @@ public class EmailService {
         sendEmail(recipientEmail, "Password Reset Request", htmlContent);
     }
 
-    public void sendOtpEmail(String recipientEmail, String otp) {
-        String htmlContent = generateOtpEmailContent(otp);
-        sendEmail(recipientEmail, "Password Reset OTP", htmlContent);
+    public void sendReplyEmail(String recipientEmail, String fullName) {
+        String htmlContent = generateReplyEmailContent(fullName);
+        sendEmail(recipientEmail, "Inquiry Received", htmlContent);
     }
+
 
     private String generateRegistrationEmailContent(String fullName) {
         return "<!DOCTYPE html>" +
@@ -65,8 +66,8 @@ public class EmailService {
                "<h1>Registration Confirmation</h1>" +
                "</div>" +
                "<div class='content'>" +
-               "<p>Dear Parent,</p>" +
-               "<p>Thank you " + fullName + " for registering your child with us. We are excited to welcome them to our institution!</p>" +
+               "<p>Dear  " + fullName + "." +
+               "<p>Thank you for registering your child with us. We are excited to welcome them to our institution!</p>" +
                "<p>If you have any questions or need further assistance, feel free to contact us.</p>" +
                "<p>Best regards,</p>" +
                "<p>MindHaven</p>" +
@@ -119,7 +120,7 @@ public class EmailService {
                "</html>";
     }
 
-    private String generateOtpEmailContent(String otp) {
+    private String generateReplyEmailContent(String fullName) {
         return "<!DOCTYPE html>" +
                "<html lang='en'>" +
                "<head>" +
@@ -128,7 +129,7 @@ public class EmailService {
                "<style>" +
                "body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f0f0f0; }" +
                ".container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }" +
-               ".header { background-color: #007bff; color: #ffffff; padding: 20px; text-align: center; }" +
+               ".header { background-color: #0044cc; color: #ffffff; padding: 20px; text-align: center; }" +
                ".header h1 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 24px; margin: 0; }" +
                ".content { padding: 20px; color: #333333; font-size: 16px; line-height: 1.5; }" +
                ".content p { margin: 0 0 20px; }" +
@@ -139,20 +140,17 @@ public class EmailService {
                "<body>" +
                "<div class='container'>" +
                "<div class='header'>" +
-               "<h1>Password Reset OTP</h1>" +
+               "<h1>Registration Confirmation</h1>" +
                "</div>" +
                "<div class='content'>" +
-               "<p>Dear Parent,</p>" +
-               "<p>You have requested to reset your password. Here is your OTP:</p>" +
-               "<p><strong>" + otp + "</strong></p>" +
-               "<p>The OTP is valid for 2 minutes. Please use it to reset your password.</p>" +
-               "<p>If you did not request this, please ignore this email.</p>" +
+               "<p>Dear  " + fullName + "." +
+               "<p>We received your inquiry and we will respond to you as soon as we can!</p>" +
+               "<p>If you have any more questions or need further assistance, feel free to contact us.</p>" +
                "<p>Best regards,</p>" +
                "<p>MindHaven</p>" +
                "</div>" +
                "<div class='footer'>" +
-               "<p>&copy; MindHaven. All rights reserved.</p>" +
-               "</div>" +
+               "<p>&copy; 2024 MindHaven. All rights reserved.</p>" +
                "</div>" +
                "</div>" +
                "</body>" +
