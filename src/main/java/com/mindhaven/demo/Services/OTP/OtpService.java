@@ -20,7 +20,7 @@ public class OtpService {
         return String.valueOf(new Random().nextInt(900000) + 100000); 
     }
 
-    // Send OTP to admin email
+    // Send OTP to  email
     public void sendOtpEmail(String email, String otp) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
