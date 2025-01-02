@@ -9,6 +9,9 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Configurations\WebConfig\
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\DemoApplication.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Entities\User.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Repositories\UserRepository.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Articles\ArticleResponseDto.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Articles\GNewsApiService.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Articles\GNewsController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\AuthController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\AuthService.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\DTO\LoginRequest.java

@@ -7,10 +7,12 @@ com\mindhaven\demo\Services\Therapists\GoogleMapsParser.class
 com\mindhaven\demo\Configurations\SecurityConfig\PasswordConfig.class
 com\mindhaven\demo\Repositories\UserRepository.class
 com\mindhaven\demo\Configurations\SecurityConfig\Config.class
+com\mindhaven\demo\Services\Articles\GNewsApiService.class
 com\mindhaven\demo\Configurations\EmailConfig\EmailService.class
 com\mindhaven\demo\Services\Authentication\DTO\LoginResponse.class
 com\mindhaven\demo\Services\OTP\OtpService.class
 com\mindhaven\demo\Services\Authentication\DTO\LoginRequest.class
+com\mindhaven\demo\Services\Articles\GNewsController.class
 com\mindhaven\demo\Configurations\ResponseConfig\ApiResponse.class
 com\mindhaven\demo\Services\Authentication\DTO\NewPassword.class
 com\mindhaven\demo\Configurations\SwaggerConfig\SwaggerConfig.class
@@ -20,6 +22,7 @@ com\mindhaven\demo\Configurations\WebConfig\WebConfig$1.class
 com\mindhaven\demo\Services\Therapists\TherapistController.class
 com\mindhaven\demo\Services\Therapists\TherapistDto.class
 com\mindhaven\demo\Configurations\SecurityConfig\CustomAuthorizationFilter.class
+com\mindhaven\demo\Services\Articles\ArticleResponseDto.class
 com\mindhaven\demo\DemoApplication.class
 com\mindhaven\demo\Configurations\WebConfig\WebConfig.class
 com\mindhaven\demo\Services\ContactUs\ContactController.class
