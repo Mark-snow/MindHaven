@@ -7,11 +7,11 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Configurations\SecurityCo
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Configurations\SwaggerConfig\SwaggerConfig.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Configurations\WebConfig\WebConfig.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\DemoApplication.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Entities\MoodLog.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Entities\User.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Exceptions\UserNotFoundException.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Repositories\MoodLogRepository.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Repositories\UserRepository.java
-C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Articles\ArticleResponseDto.java
-C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Articles\GNewsApiService.java
-C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Articles\GNewsController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\AuthController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\AuthService.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\DTO\LoginRequest.java
@@ -21,6 +21,12 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\D
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\ContactController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\MessageDto.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\MessageService.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Gnews\ArticleResponseDto.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Gnews\GNewsApiService.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Gnews\GNewsController.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\MoodLogDto.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\MoodLoggerController.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\MoodLoggerService.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\Otp.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\OtpRepository.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\OtpService.java
