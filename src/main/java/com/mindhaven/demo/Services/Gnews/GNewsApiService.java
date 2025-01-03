@@ -1,4 +1,4 @@
-package com.mindhaven.demo.Services.Articles;
+package com.mindhaven.demo.Services.Gnews;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

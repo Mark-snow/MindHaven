@@ -1,4 +1,4 @@
-package com.mindhaven.demo.Services.Articles;
+package com.mindhaven.demo.Services.Gnews;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

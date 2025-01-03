@@ -1,26 +1,27 @@
 package com.mindhaven.demo.Entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
-public class User {
+public class MoodLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String fullName;
-    private String email;
-    private String password;
-    private Long streak = 0L;
-    
+    private Long userId;
+    private LocalDate date;
+    private String timeOfDay;
+    private String mood;
+    private String description;
+
 }
