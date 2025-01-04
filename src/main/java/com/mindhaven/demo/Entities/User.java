@@ -1,5 +1,7 @@
 package com.mindhaven.demo.Entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,6 @@ public class User {
     private String fullName;
     private String email;
     private String password;
-    private Long streak = 0L;
+    private Long streak;
     
 }

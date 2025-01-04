@@ -77,6 +77,7 @@ public class AuthController {
 
         String token = authService.authenticateUser(loginRequest.getEmail(), loginRequest.getPassword());
         Long userId = user.getId();//adminRepository.getAdminId(loginRequest.getEmail()); // Assuming a method to get user ID by email
+        Long streak = user.getStreak();
          
         java.util.Map<String,Object> res = new HashMap<>();
         if(token == null){
@@ -89,6 +90,7 @@ public class AuthController {
             res.put("token", token);
             res.put("user id", userId);
             res.put("user email", loginRequest.getEmail());
+            res.put("user streak", streak);
  
             return ResponseEntity.status(HttpStatus.OK.value()).body(res);
         }

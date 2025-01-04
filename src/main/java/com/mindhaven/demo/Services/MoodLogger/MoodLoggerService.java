@@ -3,6 +3,8 @@ package com.mindhaven.demo.Services.MoodLogger;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,20 +23,21 @@ public class MoodLoggerService {
     @Autowired
     private UserRepository userRepository;
 
-    public MoodLog logMood(MoodLogDto moodLogDto, Long userId) {
+    private static final Logger log = LoggerFactory.getLogger(MoodLoggerService.class);
+
+    public MoodLog logMood(Long userId, String mood, String description) {
+
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User not found"));;
+        log.info("User found: {}", user.getFullName());
 
         MoodLog newLog = new MoodLog();
 
         newLog.setUserId(userId);
+        newLog.setMood(mood);
+        newLog.setDescription(description);
         newLog.setDate(LocalDate.now());
         newLog.setTimeOfDay(timeOfDay());
-        newLog.setMood(moodLogDto.getMood());
-        newLog.setDescription(moodLogDto.getDescription());
 
-        User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User not found"));;
-        updateUserStreak(user);
-
-        userRepository.save(user);
         moodLogRepository.save(newLog);
 
         return newLog;
@@ -46,15 +49,6 @@ public class MoodLoggerService {
 
     public void deleteLog(Long logId) {
         moodLogRepository.deleteById(logId);
-    }
-
-    private void updateUserStreak(User user) {
-        LocalDate lastLogDate = moodLogRepository.getLogDate(user.getId());
-        if (lastLogDate == (null) || lastLogDate.plusDays(1).isBefore(LocalDate.now())) {
-            user.setStreak(1L);
-        } else {
-            user.setStreak(user.getStreak() + 1);
-        }
     }
 
     public String timeOfDay() {

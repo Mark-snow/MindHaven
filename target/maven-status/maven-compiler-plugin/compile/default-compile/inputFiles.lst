@@ -27,6 +27,7 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Gnews\GNewsContr
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\MoodLogDto.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\MoodLoggerController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\MoodLoggerService.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\StreakService.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\Otp.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\OtpRepository.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\OtpService.java
