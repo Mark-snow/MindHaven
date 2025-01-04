@@ -31,6 +31,7 @@ public class AuthService {
             logger.info("User already exists with email: {}", user.getEmail());
             return null;
         }
+        user.setStreak(0L);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
