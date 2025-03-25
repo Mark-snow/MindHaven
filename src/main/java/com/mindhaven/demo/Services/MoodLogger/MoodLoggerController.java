@@ -29,8 +29,8 @@ public class MoodLoggerController {
 
     @PostMapping("/new-log/{userId}")
     public MoodLog addMood(@PathVariable Long userId, @RequestBody MoodLogDto moodDto) {
-        log.info("Received MoodLogDto: mood={}, description={}", moodDto.getMood(), moodDto.getDescription());
-        return moodLoggerService.logMood(userId, moodDto.getMood(), moodDto.getDescription());
+        log.info("Received MoodLogDto: mood={}, description={}, tag={}", moodDto.getMood(), moodDto.getDescription(), moodDto.getTag());
+        return moodLoggerService.logMood(userId, moodDto.getMood(), moodDto.getDescription(), moodDto.getTag());
     }
 
     @GetMapping("/logs/{userId}")

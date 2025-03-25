@@ -25,7 +25,7 @@ public class MoodLoggerService {
 
     private static final Logger log = LoggerFactory.getLogger(MoodLoggerService.class);
 
-    public MoodLog logMood(Long userId, String mood, String description) {
+    public MoodLog logMood(Long userId, String mood, String description, String tag) {
 
         User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User not found"));;
         log.info("User found: {}", user.getFullName());
@@ -35,6 +35,7 @@ public class MoodLoggerService {
         newLog.setUserId(userId);
         newLog.setMood(mood);
         newLog.setDescription(description);
+        newLog.setTag(tag);
         newLog.setDate(LocalDate.now());
         newLog.setTimeOfDay(timeOfDay());
 
