@@ -23,5 +23,6 @@ public class MoodLog {
     private String timeOfDay;
     private String mood;
     private String description;
+    private String tag;
 
 }

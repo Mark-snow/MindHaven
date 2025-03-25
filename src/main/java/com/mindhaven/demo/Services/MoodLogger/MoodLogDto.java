@@ -14,4 +14,7 @@ public class MoodLogDto {
     @NotBlank(message = "Description cannot be blank")
     private String description;
 
+    @NotBlank(message = "Tag cannot be blank")
+    private String tag;
+
 }
