@@ -18,7 +18,7 @@ public class GNewsApiService {
     }
 
     public String getMentalHealthArticles() {
-        String url = "https://gnews.io/api/v4/search?q=mental+health&lang=en&apikey=" + apiKey; // Replace with the actual WHO API URL
+        String url = "https://gnews.io/api/v4/search?q=mental+health&lang=en&apikey=" + apiKey;
         String uri = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("key", "mental-health")
                 .toUriString();
@@ -27,7 +27,7 @@ public class GNewsApiService {
     }
 
     public String getMentalHealthNews() {
-        String url = "https://gnews.io/api/v4/search?q=mental+health+news&lang=en&apikey=" + apiKey; // Replace with the actual WHO API URL
+        String url = "https://gnews.io/api/v4/search?q=mental+health+news&lang=en&apikey=" + apiKey;
         String uri = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("key", "mental-health-news")
                 .toUriString();
