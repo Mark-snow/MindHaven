@@ -15,6 +15,7 @@ com\mindhaven\demo\Services\MoodLogger\StreakService.class
 com\mindhaven\demo\Services\OTP\OtpService.class
 com\mindhaven\demo\Services\Authentication\DTO\LoginRequest.class
 com\mindhaven\demo\Services\MoodLogger\MoodLoggerService.class
+com\mindhaven\demo\Services\Chatbot\WebhookController.class
 com\mindhaven\demo\Services\Gnews\GNewsController.class
 com\mindhaven\demo\Services\MoodLogger\MoodLoggerController.class
 com\mindhaven\demo\Configurations\ResponseConfig\ApiResponse.class
