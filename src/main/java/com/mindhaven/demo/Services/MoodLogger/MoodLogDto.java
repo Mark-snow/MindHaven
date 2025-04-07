@@ -8,13 +8,8 @@ import lombok.Setter;
 @Setter
 public class MoodLogDto {
 
-    @NotBlank(message = "Mood cannot be blank")
     private String mood;
-
-    @NotBlank(message = "Description cannot be blank")
     private String description;
-
-    @NotBlank(message = "Tag cannot be blank")
     private String tag;
 
 }
