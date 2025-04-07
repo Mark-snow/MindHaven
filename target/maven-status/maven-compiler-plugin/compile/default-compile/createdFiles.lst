@@ -13,12 +13,12 @@ com\mindhaven\demo\Configurations\SecurityConfig\Config.class
 com\mindhaven\demo\Repositories\CommunityRepository.class
 com\mindhaven\demo\Configurations\EmailConfig\EmailService.class
 com\mindhaven\demo\Services\Authentication\DTO\LoginResponse.class
-com\mindhaven\demo\Services\MoodLogger\StreakService.class
 com\mindhaven\demo\Services\OTP\OtpService.class
 com\mindhaven\demo\Services\Authentication\DTO\LoginRequest.class
 com\mindhaven\demo\Services\MoodLogger\MoodLoggerService.class
 com\mindhaven\demo\Services\Chatbot\WebhookController.class
 com\mindhaven\demo\Services\Gnews\GNewsController.class
+com\mindhaven\demo\Services\Streak\StreakService.class
 com\mindhaven\demo\Services\MoodLogger\MoodLoggerController.class
 com\mindhaven\demo\Configurations\ResponseConfig\ApiResponse.class
 com\mindhaven\demo\Services\Authentication\DTO\NewPassword.class
@@ -39,6 +39,7 @@ com\mindhaven\demo\DemoApplication.class
 com\mindhaven\demo\Services\Gnews\GNewsApiService.class
 com\mindhaven\demo\Configurations\WebConfig\WebConfig.class
 com\mindhaven\demo\Services\ContactUs\ContactController.class
+com\mindhaven\demo\Services\Streak\StreakController.class
 com\mindhaven\demo\Services\Authentication\AuthController.class
 com\mindhaven\demo\Services\OTP\OtpRepository.class
 com\mindhaven\demo\Configurations\SecurityConfig\JwtUtil.class
