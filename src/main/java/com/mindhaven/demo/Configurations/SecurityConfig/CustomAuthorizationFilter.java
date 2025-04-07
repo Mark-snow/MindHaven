@@ -35,6 +35,12 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
                 ArrayList<String> pathsAllowed = new ArrayList<>();
                 pathsAllowed.add("/api/open");
 
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            response.setStatus(HttpServletResponse.SC_OK);
+            filterChain.doFilter(request, response); // <--- important!
+            return;
+        }
+
         if (isAllowedPath(pathsAllowed, request.getServletPath()) ||
             request.getServletPath().contains("docs") ||
             request.getServletPath().contains("/swagger-ui")) {
