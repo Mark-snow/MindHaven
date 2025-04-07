@@ -7,9 +7,11 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Configurations\SecurityCo
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Configurations\SwaggerConfig\SwaggerConfig.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Configurations\WebConfig\WebConfig.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\DemoApplication.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Entities\Community.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Entities\MoodLog.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Entities\User.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Exceptions\UserNotFoundException.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Repositories\CommunityRepository.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Repositories\MoodLogRepository.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Repositories\UserRepository.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\AuthController.java
@@ -22,6 +24,9 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Chatbot\WebhookC
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\ContactController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\MessageDto.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\MessageService.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Forum\ChatDto.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Forum\ForumController.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Forum\ForumService.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Gnews\ArticleResponseDto.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Gnews\GNewsApiService.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Gnews\GNewsController.java
