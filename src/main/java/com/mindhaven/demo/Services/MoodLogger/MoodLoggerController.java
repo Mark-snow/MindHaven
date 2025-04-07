@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mindhaven.demo.Entities.MoodLog;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/mood-logger")
 @CrossOrigin("*")
@@ -28,7 +30,7 @@ public class MoodLoggerController {
     }
 
     @PostMapping("/new-log/{userId}")
-    public MoodLog addMood(@PathVariable Long userId, @RequestBody MoodLogDto moodDto) {
+    public MoodLog addMood(@Valid @PathVariable Long userId, @RequestBody MoodLogDto moodDto) {
         log.info("Received MoodLogDto: mood={}, description={}, tag={}", moodDto.getMood(), moodDto.getDescription(), moodDto.getTag());
         return moodLoggerService.logMood(userId, moodDto.getMood(), moodDto.getDescription(), moodDto.getTag());
     }
