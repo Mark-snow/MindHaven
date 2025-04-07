@@ -1,5 +1,7 @@
 package com.mindhaven.demo.Services.MoodLogger;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,7 +38,7 @@ public class MoodLoggerController {
     }
 
     @GetMapping("/logs/{userId}")
-    public MoodLog getMood(@PathVariable Long userId) {
+    public List<MoodLog> getMood(@PathVariable Long userId) {
         return moodLoggerService.getLogs(userId);
     }
 
