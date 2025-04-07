@@ -22,5 +22,7 @@ public class User {
     private String email;
     private String password;
     private Long streak;
+    private Long lostStreak;
+    private Long resetStreakCount;
     
 }

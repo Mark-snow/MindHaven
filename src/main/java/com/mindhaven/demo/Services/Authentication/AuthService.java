@@ -32,6 +32,7 @@ public class AuthService {
             return null;
         }
         user.setStreak(0L);
+        user.setResetStreakCount(3L);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
@@ -44,6 +45,8 @@ public class AuthService {
             if (passwordEncoder.matches(password, User.getPassword())) {
                 String token = jwtUtil.generateToken(email);
                 logger.info("Generated token for email: {}", email);
+                logger.info("User authenticated successfully: {}", User.getFullName());
+                
                 return token;
             } else {
                 logger.warn("Invalid password for email: {}", email);
