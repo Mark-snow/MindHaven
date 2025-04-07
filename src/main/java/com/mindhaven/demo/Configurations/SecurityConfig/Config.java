@@ -1,6 +1,7 @@
 package com.mindhaven.demo.Configurations.SecurityConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,6 +24,7 @@ public class Config {
             .csrf((csrf) -> csrf.disable()) // Disable CSRF protection
             .authorizeHttpRequests((authorizeHttpRequests) -> 
                 authorizeHttpRequests
+                    .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // 👈 allow preflight requests
                     .requestMatchers(
                     
                     "/api/open/**",
