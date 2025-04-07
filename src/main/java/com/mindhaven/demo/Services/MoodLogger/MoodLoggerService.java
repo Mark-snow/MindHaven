@@ -2,6 +2,7 @@ package com.mindhaven.demo.Services.MoodLogger;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,7 +45,7 @@ public class MoodLoggerService {
         return newLog;
     }
 
-    public MoodLog getLogs(Long userId) {
+    public List<MoodLog> getLogs(Long userId) {
         return moodLogRepository.findByUserId(userId);
     }
 
