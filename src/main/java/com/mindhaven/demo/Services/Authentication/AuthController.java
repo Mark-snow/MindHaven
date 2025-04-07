@@ -88,9 +88,9 @@ public class AuthController {
         else{
             res.put("status", 200);
             res.put("token", token);
-            res.put("user id", userId);
-            res.put("user email", loginRequest.getEmail());
-            res.put("user streak", streak);
+            res.put("userId", userId);
+            res.put("email", loginRequest.getEmail());
+            res.put("streak", streak);
  
             return ResponseEntity.status(HttpStatus.OK.value()).body(res);
         }
