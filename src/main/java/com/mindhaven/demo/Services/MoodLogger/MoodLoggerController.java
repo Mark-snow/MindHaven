@@ -15,7 +15,7 @@ import com.mindhaven.demo.Entities.MoodLog;
 
 @RestController
 @RequestMapping("/api/mood-logger")
-//@CrossOrigin("*")
+@CrossOrigin("*")
 
 public class MoodLoggerController {
     
