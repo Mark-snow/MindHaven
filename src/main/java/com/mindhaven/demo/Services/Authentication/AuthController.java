@@ -76,7 +76,7 @@ public class AuthController {
         }
 
         String token = authService.authenticateUser(loginRequest.getEmail(), loginRequest.getPassword());
-        Long userId = user.getId();
+        Long userId = user.getUserId();
         Long streak = user.getStreak();
          
         java.util.Map<String,Object> res = new HashMap<>();
