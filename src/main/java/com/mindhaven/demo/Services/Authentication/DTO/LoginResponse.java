@@ -9,16 +9,16 @@ public class LoginResponse {
     private boolean success;
     private String message;
     private String token;
-    private Long id;
+    private Long userId;
     private String streak;
 
 
     // Constructor
-    public LoginResponse(boolean success, String message, String token, Long id, String streak) {
+    public LoginResponse(boolean success, String message, String token, Long userId, String streak) {
         this.success = success;
         this.message = message;
         this.token = token;
-        this.id = id;
+        this.userId = userId;
         this.streak = streak;
     }
 

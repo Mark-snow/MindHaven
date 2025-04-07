@@ -28,7 +28,7 @@ public class StreakService {
         LocalDate now = LocalDate.now();
 
         for (User user : users) {
-            LocalDate lastLogDate = moodLogRepository.findLastLogDate(user.getId());
+            LocalDate lastLogDate = moodLogRepository.findLastLogDate(user.getUserId());
 
             if (lastLogDate != null && lastLogDate.isEqual(now.minusDays(1))) {
                 user.setStreak(user.getStreak() + 1);
