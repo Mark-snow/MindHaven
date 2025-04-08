@@ -18,9 +18,16 @@ public class StreakService {
     @Autowired
     private MoodLogRepository moodLogRepository;
 
-    public Long getStreak(Long userId) {
+    public ResponseDto getStreak(Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
-        return user.getStreak();
+
+        ResponseDto responseDto = new ResponseDto();
+        responseDto.setHasJournaledBefore(moodLogRepository.hasJournaledBefore(userId));
+        responseDto.setStreak(user.getStreak());
+        responseDto.setResetStreakCount(user.getResetStreakCount());
+        responseDto.setHoursSinceLastJournal(moodLogRepository.getHoursSinceLastJournal(userId));
+
+        return responseDto;
     }
 
     public void updateStreak(Long userId) {
@@ -60,12 +67,20 @@ public class StreakService {
         return user.getStreak();
     }
 
-    public boolean canResetStreak(Long userId) {
+    public Long canResetStreak(Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
-        return (user.getResetStreakCount() > 0 && user.getLostStreak() > 0);
+        
+        if (user.getLostStreak() < 1) {
+            return 0L;
+        } else if (user.getResetStreakCount() < 1) {
+            return 1L;
+        } else {
+            return 2L;
+        }
+
     }
 
-    // Uncomment the following method to enable automatic streak updates
+    // Uncomment to enable automatic streak updates
 
     // @Scheduled(cron = "0 0 0 * * *")
     // private void updateUserStreak() {

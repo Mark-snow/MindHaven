@@ -20,20 +20,31 @@ public class StreakController {
     private StreakService streakService;
 
     @GetMapping("/{userId}")
-    public ApiResponse<Long> getStreak(@PathVariable Long userId) {
-        Long streak = streakService.getStreak(userId);
+    public ApiResponse<ResponseDto> getStreak(@PathVariable Long userId) {
+        ResponseDto streak = streakService.getStreak(userId);
         return new ApiResponse<>(true, "Streak retrieved successfully", streak);
     }
 
     @GetMapping("/restore/{userId}")
     public ApiResponse<Long> restoreStreak(@PathVariable Long userId) {
+
+        Long result = streakService.canResetStreak(userId);
+
+        // Check if the user has a lost streak
+        if (result == 0L) {
+            return new ApiResponse<>(false, "No lost streak to restore", null);
+        }
+
         // Check if the user has any reset streaks left
-        if (streakService.canResetStreak(userId) == false) {
+        else if (result == 1L) {
             return new ApiResponse<>(false, "No reset streaks left", null);
         }
-        
-        Long streak = streakService.restoreStreak(userId);
-        return new ApiResponse<>(true, "Streak restored successfully", streak);
+
+        else {
+            Long streak = streakService.restoreStreak(userId);
+            return new ApiResponse<>(true, "Streak restored successfully", streak);
+        }
+
     }
 
 }
