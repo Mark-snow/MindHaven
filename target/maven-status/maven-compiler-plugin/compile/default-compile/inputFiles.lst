@@ -36,6 +36,7 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\MoodLogger\MoodL
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\Otp.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\OtpRepository.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\OTP\OtpService.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Streak\ResponseDto.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Streak\StreakController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Streak\StreakService.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Therapists\GoogleMapsParser.java

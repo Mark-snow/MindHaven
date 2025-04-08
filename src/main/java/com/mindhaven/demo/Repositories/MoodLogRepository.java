@@ -16,4 +16,10 @@ public interface MoodLogRepository extends JpaRepository<MoodLog, Long>{
     
     @Query("SELECT MAX(m.date) FROM MoodLog m WHERE m.userId = :userId")
     LocalDate findLastLogDate(@Param("userId") Long userId);
+
+    @Query("SELECT COUNT(m) > 0 FROM MoodLog m WHERE m.userId = :userId")
+    boolean hasJournaledBefore(@Param("userId") Long userId);
+
+    @Query("SELECT TIMESTAMPDIFF(HOUR, MAX(m.date), CURRENT_TIMESTAMP) FROM MoodLog m WHERE m.userId = :userId")
+    Long getHoursSinceLastJournal(@Param("userId") Long userId);
 }

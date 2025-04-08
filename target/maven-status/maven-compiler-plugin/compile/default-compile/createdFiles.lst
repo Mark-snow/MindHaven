@@ -34,6 +34,7 @@ com\mindhaven\demo\Services\Therapists\TherapistDto.class
 com\mindhaven\demo\Configurations\SecurityConfig\CustomAuthorizationFilter.class
 com\mindhaven\demo\Repositories\MoodLogRepository.class
 com\mindhaven\demo\Services\Forum\ChatDto.class
+com\mindhaven\demo\Services\Streak\ResponseDto.class
 com\mindhaven\demo\Services\Forum\ForumService.class
 com\mindhaven\demo\DemoApplication.class
 com\mindhaven\demo\Services\Gnews\GNewsApiService.class
