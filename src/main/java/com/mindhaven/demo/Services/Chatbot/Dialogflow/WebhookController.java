@@ -1,4 +1,4 @@
-package com.mindhaven.demo.Services.Chatbot;
+package com.mindhaven.demo.Services.Chatbot.Dialogflow;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

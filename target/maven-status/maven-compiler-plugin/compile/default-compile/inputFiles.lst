@@ -20,7 +20,11 @@ C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\D
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\DTO\LoginResponse.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\DTO\NewPassword.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Authentication\DTO\ResetPasswordRequest.java
-C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Chatbot\WebhookController.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Chatbot\Dialogflow\DialogflowController.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Chatbot\Dialogflow\DialogflowService.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Chatbot\Dialogflow\DTO\ChatRequest.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Chatbot\Dialogflow\DTO\ChatResponse.java
+C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\Chatbot\Dialogflow\WebhookController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\ContactController.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\MessageDto.java
 C:\Projects\mindHaven\src\main\java\com\mindhaven\demo\Services\ContactUs\MessageService.java
