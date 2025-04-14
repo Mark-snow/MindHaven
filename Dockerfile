@@ -1,12 +1,12 @@
-FROM openjdk:22
+# Step 1: Build the application
+FROM maven:3.9.6-eclipse-temurin-22 AS build
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-ARG JAR_FILE=target/*.jar
-
-COPY ./target/demo-0.0.1-SNAPSHOT.jar demo.jar
-
-ENTRYPOINT ["java" , "-jar", "demo.jar"]
-
+# Step 2: Run the application
+FROM eclipse-temurin:22
+WORKDIR /app
+COPY --from=build /app/target/*.jar demo.jar
+ENTRYPOINT ["java", "-jar", "demo.jar"]
 EXPOSE 8080
-
-
-
