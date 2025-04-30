@@ -140,7 +140,7 @@ public class EmailService {
                "<body>" +
                "<div class='container'>" +
                "<div class='header'>" +
-               "<h1>Registration Confirmation</h1>" +
+               "<h1>Message Received</h1>" +
                "</div>" +
                "<div class='content'>" +
                "<p>Dear  " + fullName + "." +

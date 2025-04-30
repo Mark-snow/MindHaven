@@ -29,6 +29,7 @@ public class Config {
                     
                     "/api/open/**",
                     "/api/**",
+                    "/api/open/contact-us",
                    
                     
                     "/v2/**",

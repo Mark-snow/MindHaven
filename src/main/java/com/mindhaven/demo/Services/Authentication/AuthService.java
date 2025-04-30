@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.mindhaven.demo.Configurations.EmailConfig.EmailService;
 import com.mindhaven.demo.Configurations.SecurityConfig.JwtUtil;
 import com.mindhaven.demo.Entities.User;
 import com.mindhaven.demo.Repositories.UserRepository;
+import com.mindhaven.demo.Services.Streak.StreakService;
 
 
 @Service
@@ -23,6 +25,12 @@ public class AuthService {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
+    private StreakService streakService;
+
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
     private JwtUtil jwtUtil;
 
     public User registerUser(User user) {
@@ -34,6 +42,10 @@ public class AuthService {
         user.setStreak(0L);
         user.setResetStreakCount(3L);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        emailService.sendRegistrationEmail(user.getEmail(), user.getFullName());
+        logger.info("Sending registration email to: {}", user.getEmail());
+        logger.info("User registered successfully: {}", user.getFullName());
         return userRepository.save(user);
     }
 
@@ -46,6 +58,8 @@ public class AuthService {
                 String token = jwtUtil.generateToken(email);
                 logger.info("Generated token for email: {}", email);
                 logger.info("User authenticated successfully: {}", User.getFullName());
+                
+                streakService.resetStreak(User.getUserId());
                 
                 return token;
             } else {

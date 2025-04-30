@@ -42,12 +42,21 @@ public class StreakService {
         else if (lastLogDate != null && lastLogDate.isEqual(now)) {
             user.setStreak(user.getStreak());
         }
-        else if (lastLogDate != null && lastLogDate.isBefore(now.minusDays(1))) {
+
+        userRepository.save(user);
+    }
+
+    public void resetStreak(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+
+        LocalDate now = LocalDate.now();
+        LocalDate lastLogDate = moodLogRepository.findLastLogDate(user.getUserId());
+
+        if (lastLogDate != null && lastLogDate.isBefore(now.minusDays(1))) {
             user.setLostStreak(user.getStreak());
             user.setStreak(0L);
         }
-
-        userRepository.save(user);
+        
     }
 
     public Long restoreStreak(Long userId) {
