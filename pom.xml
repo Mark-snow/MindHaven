@@ -155,6 +155,16 @@
 			<artifactId>google-cloud-aiplatform</artifactId>
 			<version>3.0.0</version> <!-- Check for latest version -->
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>32.1.3-jre</version> <!-- or latest version -->
+		</dependency>
 	</dependencies>
 
 	<build>
