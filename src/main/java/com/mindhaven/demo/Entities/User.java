@@ -24,5 +24,6 @@ public class User {
     private Long streak;
     private Long lostStreak;
     private Long resetStreakCount;
+    private String mbtiType; // Optional, can be null if not set
     
 }
