@@ -35,7 +35,7 @@ public class SwaggerConfig {
             .info(new Info()
                 .title("MindHaven Portal API")
                 .version("2.8")
-                .description("Teddy Kibuthu & Mark Maina"));
+                .description("Mark Maina"));
     }
 
 }

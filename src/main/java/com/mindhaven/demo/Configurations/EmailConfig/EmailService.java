@@ -67,7 +67,7 @@ public class EmailService {
                "</div>" +
                "<div class='content'>" +
                "<p>Dear  " + fullName + "." +
-               "<p>Thank you for registering your child with us. We are excited to welcome them to our institution!</p>" +
+               "<p>Thank you for registering with us. We are excited to welcome you to our platform!</p>" +
                "<p>If you have any questions or need further assistance, feel free to contact us.</p>" +
                "<p>Best regards,</p>" +
                "<p>MindHaven</p>" +
