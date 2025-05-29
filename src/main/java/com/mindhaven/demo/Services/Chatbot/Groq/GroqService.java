@@ -17,7 +17,7 @@ import java.util.List;
 public class GroqService {
     private final WebClient webClient;
     private final String model;
-    private final String systemPrompt = """
+    private final String baseSystemPrompt = """
         You are havenBot, a friendly, caring, and emotionally intelligent mental health companion. 
         You provide comforting, empathetic, and supportive responses to users who may be feeling stressed, anxious, or lonely.
         
@@ -47,7 +47,14 @@ public class GroqService {
         this.model = config.getModel();
     }
 
-    public Mono<String> getChatCompletion(String userMessage) {
+    public Mono<String> getChatCompletion(String userMessage, String mbti) {
+
+        String systemPrompt = baseSystemPrompt;
+
+        if (mbti != null && !mbti.isEmpty()) {
+            systemPrompt += String.format("The user's MBTI type is %s. Respond in consideration of this as if you know their personality type natuarally", mbti);      
+        }
+
         List<GroqMessage> messages = List.of(
             new GroqMessage("system", systemPrompt),
             new GroqMessage("user", userMessage)

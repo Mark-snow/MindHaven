@@ -3,13 +3,18 @@ package com.mindhaven.demo.Services.Chatbot.Groq;
 import java.time.Duration;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mindhaven.demo.Entities.User;
+import com.mindhaven.demo.Repositories.UserRepository;
+import com.mindhaven.demo.Services.Chatbot.Dialogflow.DTO.ChatResponse;
 import com.mindhaven.demo.Services.Chatbot.Groq.DTO.ChatRequest;
 
 import lombok.AllArgsConstructor;
@@ -31,9 +36,17 @@ public class GroqController {
         this.groqService = groqService;
     }
 
-    @PostMapping
-    public Mono<ResponseEntity<ChatResponse>> chat(@RequestBody ChatRequest request) {
+    @Autowired
+    private UserRepository userRepository;
+
+    @PostMapping("/{userId}")
+    public Mono<ResponseEntity<ChatResponse>> chat(@PathVariable Long userId, @RequestBody ChatRequest request) {
         String userMessage = request.getMessage().trim();
+
+        String mbtiType = userRepository.findById(userId)
+            .map(User::getMbtiType)
+            .orElse(null);
+
         
         if (userMessage.isEmpty()) {
             return Mono.just(ResponseEntity.ok(
@@ -50,7 +63,7 @@ public class GroqController {
             ));
         }
 
-        return groqService.getChatCompletion(userMessage)
+        return groqService.getChatCompletion(userMessage, mbtiType)
                 .map(response -> ResponseEntity.ok(new ChatResponse(response)))
                 .timeout(Duration.ofSeconds(15))
                 .onErrorReturn(ResponseEntity.ok(
