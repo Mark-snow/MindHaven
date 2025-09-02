@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.mindhaven.demo.Configurations.DatabaseConfig.SequenceGenerator;
 import com.mindhaven.demo.Configurations.EmailConfig.EmailService;
 import com.mindhaven.demo.Configurations.SecurityConfig.JwtUtil;
 import com.mindhaven.demo.Entities.User;
@@ -25,6 +26,9 @@ public class AuthService {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
+    private SequenceGenerator sequenceGenerator;
+
+    @Autowired
     private StreakService streakService;
 
     @Autowired
@@ -39,6 +43,7 @@ public class AuthService {
             logger.info("User already exists with email: {}", user.getEmail());
             return null;
         }
+        user.setUserId(sequenceGenerator.generateSequence("user_sequence"));
         user.setStreak(0L);
         user.setResetStreakCount(3L);
         user.setPassword(passwordEncoder.encode(user.getPassword()));

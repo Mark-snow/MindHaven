@@ -1,10 +1,13 @@
 package com.mindhaven.demo.Services.Streak;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mindhaven.demo.Entities.MoodLog;
 import com.mindhaven.demo.Entities.User;
 import com.mindhaven.demo.Repositories.MoodLogRepository;
 import com.mindhaven.demo.Repositories.UserRepository;
@@ -21,12 +24,13 @@ public class StreakService {
     public ResponseDto getStreak(Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
+        MoodLog lastLog = moodLogRepository.findTopByUserIdOrderByDateDesc(userId);
+
         ResponseDto responseDto = new ResponseDto();
-        responseDto.setHasJournaledBefore(moodLogRepository.hasJournaledBefore(userId));
+        responseDto.setHasJournaledBefore(moodLogRepository.existsByUserId(userId));
         responseDto.setStreak(user.getStreak());
         responseDto.setResetStreakCount(user.getResetStreakCount());
-        responseDto.setHoursSinceLastJournal(moodLogRepository.getHoursSinceLastJournal(userId));
-
+        responseDto.setHoursSinceLastJournal(ChronoUnit.HOURS.between(lastLog.getDate().atStartOfDay(), LocalDateTime.now()));
         return responseDto;
     }
 
@@ -34,7 +38,7 @@ public class StreakService {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
         LocalDate now = LocalDate.now();
-        LocalDate lastLogDate = moodLogRepository.findLastLogDate(user.getUserId());
+        LocalDate lastLogDate = (moodLogRepository.findLastLogDate(user.getUserId()).getDate());
 
         if (lastLogDate != null && lastLogDate.isEqual(now.minusDays(1))) {
             user.setStreak(user.getStreak() + 1);
@@ -50,7 +54,7 @@ public class StreakService {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
         LocalDate now = LocalDate.now();
-        LocalDate lastLogDate = moodLogRepository.findLastLogDate(user.getUserId());
+        LocalDate lastLogDate = moodLogRepository.findLastLogDate(user.getUserId()).getDate();
 
         if (lastLogDate != null && lastLogDate.isBefore(now.minusDays(1))) {
             user.setLostStreak(user.getStreak());

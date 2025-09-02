@@ -1,12 +1,10 @@
 package com.mindhaven.demo.Repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.mindhaven.demo.Entities.Community;
 
-@Repository
-public interface CommunityRepository extends JpaRepository<Community, Long> {
+public interface CommunityRepository extends MongoRepository<Community, Long> {
     // Custom query methods can be defined here if needed
 
 }

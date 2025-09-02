@@ -9,4 +9,4 @@ FROM eclipse-temurin:22
 WORKDIR /app
 COPY --from=build /app/target/*.jar demo.jar
 ENTRYPOINT ["java", "-jar", "demo.jar"]
-EXPOSE 8080
+EXPOSE 8081

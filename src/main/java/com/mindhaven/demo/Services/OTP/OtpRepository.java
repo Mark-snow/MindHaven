@@ -1,9 +1,7 @@
 package com.mindhaven.demo.Services.OTP;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-@Repository
-public interface OtpRepository extends JpaRepository<Otp, Long> {
+public interface OtpRepository extends MongoRepository<Otp, Long> {
     Otp findByEmailAndOtp(String email, String otp);
 }

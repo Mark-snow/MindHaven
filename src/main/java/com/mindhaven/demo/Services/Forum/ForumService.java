@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mindhaven.demo.Configurations.DatabaseConfig.SequenceGenerator;
 import com.mindhaven.demo.Entities.Community;
 import com.mindhaven.demo.Entities.User;
 import com.mindhaven.demo.Exceptions.UserNotFoundException;
@@ -22,6 +23,9 @@ public class ForumService {
     @Autowired
     private CommunityRepository communityRepository;
 
+    @Autowired
+    private SequenceGenerator sequenceGenerator;
+
     private static final Logger log = LoggerFactory.getLogger(ForumService.class);
 
 
@@ -31,6 +35,7 @@ public class ForumService {
 
         Community community = new Community();
 
+        community.setId(sequenceGenerator.generateSequence("forum_sequence"));
         community.setUserId(userId);
         community.setName(user.getFullName());
         community.setThoughts(chatDto.getThoughts());
